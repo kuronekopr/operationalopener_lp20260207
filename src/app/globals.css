@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+:root {
+  /* Power Automate / Fluent UI Inspired Palette */
+  --background: #FAF9F8; /* Light neutral background */
+  --foreground: #323130; /* Dark neutral text */
+  
+  --brand-blue: #0078D4;
+  --brand-dark: #106EBE;
+  --brand-light: #2B88D8;
+  
+  --flow-bg: #FAF9F8;
+  --card-bg: #FFFFFF;
+  --card-border: #E1DFDD;
+  --card-hover: #F3F2F1;
+  
+  --connector: #8A8886;
+  
+  /* Status Colors */
+  --success: #107C10;
+  --error: #A80000;
+  --warning: #797775;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-light: var(--brand-light);
+  --color-flow-bg: var(--flow-bg);
+  --color-card-bg: var(--card-bg);
+  --color-card-border: var(--card-border);
+  --color-card-hover: var(--card-hover);
+  --color-connector: var(--connector);
+  --color-success: var(--success);
+  --color-error: var(--error);
+  
+  --font-sans: "Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Utilities for Glassmorphism tailored to corporate look */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.flow-connector-v {
+  width: 2px;
+  background-color: var(--connector);
+  margin: 0 auto;
+}
+
+.flow-connector-arrow {
+  width: 0; 
+  height: 0; 
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid var(--connector);
+  margin: 0 auto;
+}
