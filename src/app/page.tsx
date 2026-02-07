@@ -13,9 +13,9 @@ export default function Home() {
             <span className="font-bold text-sm tracking-wide">Operational Opener ver 2026.02</span>
           </div>
           <div className="flex items-center gap-1">
-            <button className="p-1 hover:bg-white/10 rounded-sm" aria-label="Minimize"><Minimize size={14} /></button>
-            <button className="p-1 hover:bg-white/10 rounded-sm" aria-label="Maximize"><Maximize size={14} /></button>
-            <button className="p-1 hover:bg-red-500 rounded-sm" aria-label="Close"><X size={14} /></button>
+            <Link href="/program" className="p-1 hover:bg-red-500 rounded-sm transition-colors" aria-label="Close">
+              <X size={14} />
+            </Link>
           </div>
         </div>
 
@@ -33,9 +33,7 @@ export default function Home() {
           {/* Left Column: Text */}
           <div className="flex-1 space-y-8">
             <div className="space-y-4">
-              <div className="inline-block px-2 py-1 bg-yellow-100 border border-yellow-300 text-yellow-800 text-xs font-mono mb-2">
-                WARNING: PERSON_DEPENDENCY_DETECTED
-              </div>
+
 
               <h1 className="text-3xl md:text-4xl font-extrabold text-[#1F2937] leading-tight">
                 止まらない、<br />
@@ -47,11 +45,7 @@ export default function Home() {
                 <p>作った人がいなくなったら、<br />説明できますか？</p>
               </div>
 
-              <div className="pt-4 p-4 bg-gray-50 border border-gray-200 rounded text-sm text-gray-600 font-mono">
-                &gt; Detecting black box flows...<br />
-                &gt; Critical logic found in user's head.<br />
-                &gt; Risk assessment: HIGH
-              </div>
+
             </div>
 
             <div className="flex flex-wrap gap-4 pt-4">
@@ -77,7 +71,7 @@ export default function Home() {
               <div className="z-10 w-full mb-4">
                 <div className="bg-[#1E3A8A] text-white p-3 rounded-md shadow-sm border border-[#1E3A8A] flex items-center justify-center text-sm font-bold relative">
                   <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-4 bg-[#F3F2F1] z-[-1]"></div> {/* Hide line above */}
-                  1. オペレーショナル・オープナー
+                  オペレーショナル・オープナー
                 </div>
                 <div className="h-4"></div> {/* Spacer for arrow */}
                 <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-[#8A8886] mx-auto"></div>
@@ -89,7 +83,7 @@ export default function Home() {
                   <div className="w-8 h-8 rounded bg-gray-100 flex items-center justify-center text-gray-500">
                     <Search size={16} />
                   </div>
-                  <span className="text-sm font-medium text-gray-700">2. 概要把握</span>
+                  <span className="text-sm font-medium text-gray-700">サービス詳細と導入効果を確認</span>
                 </div>
                 <div className="h-4"></div>
                 <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-[#8A8886] mx-auto"></div>
@@ -101,7 +95,7 @@ export default function Home() {
                   <div className="w-8 h-8 rounded bg-[#0078D4] flex items-center justify-center text-white">
                     <FileText size={16} />
                   </div>
-                  <span className="text-sm font-medium text-gray-700">3. パワーオートメイト仕様書作成</span>
+                  <span className="text-sm font-medium text-gray-700">パワーオートメイト仕様書作成</span>
                 </div>
                 <div className="h-4"></div>
                 <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-[#8A8886] mx-auto"></div>
@@ -113,7 +107,7 @@ export default function Home() {
                   <div className="w-8 h-8 rounded bg-[#037A7A] flex items-center justify-center text-white">
                     <Database size={16} />
                   </div>
-                  <span className="text-sm font-medium text-gray-700">4. SPリスト作成自動化</span>
+                  <span className="text-sm font-medium text-gray-700">SPリスト作成自動化</span>
                 </div>
                 <div className="h-4"></div>
                 <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-[#8A8886] mx-auto"></div>
@@ -123,7 +117,7 @@ export default function Home() {
               <div className="z-10 w-full">
                 <div className="bg-[#DEF7E5] p-3 rounded-md shadow-sm border border-[#107C10] flex items-center justify-center gap-2">
                   <Shield size={16} className="text-[#107C10]" />
-                  <span className="text-sm font-bold text-[#107C10]">5. 業務資産化 (Completed)</span>
+                  <span className="text-sm font-bold text-[#107C10]">業務資産化 (Completed)</span>
                 </div>
               </div>
 

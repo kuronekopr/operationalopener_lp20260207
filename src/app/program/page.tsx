@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { ArrowLeft, FileText, Database, Shield, CheckCheck, Coins, Settings, Check } from "lucide-react";
+import { ArrowLeft, FileText, Database, Shield, CheckCheck, Coins, Settings, Check, ArrowRightCircle } from "lucide-react";
 
 export const metadata = {
-    title: "Program Details | Operational Opener",
+    title: "属人業務フロー再設計プログラム | Operational Opener",
     description: "業務自動化のブラックボックス解消プログラムの詳細。",
 };
 
@@ -40,7 +40,8 @@ export default function ProgramPage() {
 
                     {/* Header Section */}
                     <div className="mb-12 border-b border-gray-200 pb-8">
-                        <h1 className="text-3xl font-bold text-[#1F2937] mb-6">Operational Continuity Program</h1>
+                        <h1 className="text-3xl font-bold text-[#1F2937] mb-2">属人業務フロー再設計プログラム</h1>
+                        <p className="text-xl font-bold text-[#374151] mb-6">― 業務停止を起こさない会社資産化 ―</p>
                         <p className="text-lg text-gray-600 leading-relaxed max-w-4xl">
                             属人化した自動化フローを「組織の資産」に変換するための、包括的なコンサルティング・実装支援プログラムです。<br />
                             現状のブラックボックス解析から、仕様書の作成、そして将来にわたる変更管理の仕組み構築までを一気通貫で提供します。
@@ -50,13 +51,13 @@ export default function ProgramPage() {
                     {/* Three Pillars Section */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
                         {/* Pillar 1 */}
-                        <div className="p-6 bg-gray-50 border border-gray-200 rounded shadow-sm hover:shadow-md transition-shadow relative group">
+                        <div className="p-6 bg-gray-50 border border-gray-200 rounded shadow-sm hover:shadow-md transition-shadow relative group h-full flex flex-col">
                             <div className="absolute top-0 left-0 w-full h-1 bg-blue-500 rounded-t opacity-0 group-hover:opacity-100 transition-opacity"></div>
                             <div className="w-12 h-12 bg-blue-100 text-[#1E3A8A] rounded flex items-center justify-center mb-4">
                                 <FileText size={24} />
                             </div>
-                            <h3 className="text-xl font-bold text-[#1F2937] mb-3">1. Documentation</h3>
-                            <p className="text-gray-600 text-sm leading-relaxed mb-4 h-20">
+                            <h3 className="text-xl font-bold text-[#1F2937] mb-3">1. 文書化</h3>
+                            <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-1">
                                 既存のPower Automateフローを解析し、人間が理解できる「業務仕様書」として再構築します。
                                 ロジックの意図、例外処理、依存関係を明確化します。
                             </p>
@@ -68,13 +69,13 @@ export default function ProgramPage() {
                         </div>
 
                         {/* Pillar 2 */}
-                        <div className="p-6 bg-gray-50 border border-gray-200 rounded shadow-sm hover:shadow-md transition-shadow relative group">
+                        <div className="p-6 bg-gray-50 border border-gray-200 rounded shadow-sm hover:shadow-md transition-shadow relative group h-full flex flex-col">
                             <div className="absolute top-0 left-0 w-full h-1 bg-teal-500 rounded-t opacity-0 group-hover:opacity-100 transition-opacity"></div>
                             <div className="w-12 h-12 bg-teal-100 text-teal-800 rounded flex items-center justify-center mb-4">
                                 <Database size={24} />
                             </div>
-                            <h3 className="text-xl font-bold text-[#1F2937] mb-3">2. Standardization</h3>
-                            <p className="text-gray-600 text-sm leading-relaxed mb-4 h-20">
+                            <h3 className="text-xl font-bold text-[#1F2937] mb-3">2. 標準化</h3>
+                            <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-1">
                                 「誰が作っても同じ品質」になるよう、開発ルールを策定します。
                                 命名規則、フォルダ構成、共通部品の利用ガイドラインを整備します。
                             </p>
@@ -86,13 +87,13 @@ export default function ProgramPage() {
                         </div>
 
                         {/* Pillar 3 */}
-                        <div className="p-6 bg-gray-50 border border-gray-200 rounded shadow-sm hover:shadow-md transition-shadow relative group">
+                        <div className="p-6 bg-gray-50 border border-gray-200 rounded shadow-sm hover:shadow-md transition-shadow relative group h-full flex flex-col">
                             <div className="absolute top-0 left-0 w-full h-1 bg-green-500 rounded-t opacity-0 group-hover:opacity-100 transition-opacity"></div>
                             <div className="w-12 h-12 bg-green-100 text-green-800 rounded flex items-center justify-center mb-4">
                                 <Shield size={24} />
                             </div>
-                            <h3 className="text-xl font-bold text-[#1F2937] mb-3">3. Asset Management</h3>
-                            <p className="text-gray-600 text-sm leading-relaxed mb-4 h-20">
+                            <h3 className="text-xl font-bold text-[#1F2937] mb-3">3. 資産化</h3>
+                            <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-1">
                                 作成したドキュメントとフローをGitHub等のバージョン管理システムで管理する体制を構築します。
                                 「いつ、誰が、なぜ変えたか」を永続化します。
                             </p>
@@ -108,8 +109,8 @@ export default function ProgramPage() {
                     <div className="bg-[#F9FAFB] border border-gray-300 rounded p-8 flex flex-col md:flex-row items-center justify-between gap-8 shadow-inner">
                         <div className="flex-1">
                             <h2 className="text-2xl font-bold text-[#1F2937] mb-3 flex items-center gap-2">
-                                <Coins className="text-yellow-600" />
-                                Pricing & Plans
+                                <ArrowRightCircle className="text-blue-600" />
+                                ネクスト・ステップ
                             </h2>
                             <p className="text-gray-600 mb-4 leading-relaxed">
                                 対象となるフローの規模・数に応じて、最適なプランをご提案します。<br />
