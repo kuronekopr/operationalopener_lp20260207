@@ -35,8 +35,37 @@ export default function ContactPage() {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        // Simulate submission
-        setTimeout(() => setSubmitted(true), 1000);
+
+        // Extract plain values from form elements
+        const form = e.target as HTMLFormElement;
+        const companyName = (form.elements.namedItem('companyName') as HTMLInputElement).value;
+        const comment = (form.elements.namedItem('comment') as HTMLTextAreaElement).value;
+
+        // Apps checks
+        const checkedApps = Array.from(form.querySelectorAll('input[type="checkbox"]:checked'))
+            .map(cb => (cb as HTMLInputElement).nextElementSibling?.textContent)
+            .filter(Boolean)
+            .join(', ');
+
+        const body = `
+【会社名】
+${companyName}
+
+【担当者】
+${contacts.map(c => `${c.name} (${c.department} / ${c.email})`).join('\n')}
+
+【対象アプリ】
+${checkedApps}
+
+【ご相談内容】
+${comment}
+        `.trim();
+
+        // Open mail client
+        window.location.href = `mailto:minagawa@operationalopener.com?subject=${encodeURIComponent("【Web問合せ】無料診断のお申し込み")}&body=${encodeURIComponent(body)}`;
+
+        // Show success screen
+        setSubmitted(true);
     };
 
     if (submitted) {
@@ -112,6 +141,7 @@ export default function ContactPage() {
                             </label>
                             <input
                                 type="text"
+                                name="companyName"
                                 required
                                 className="w-full p-3 border border-gray-300 rounded focus:ring-2 focus:ring-[#1E3A8A] focus:border-transparent outline-none transition-shadow"
                                 placeholder="株式会社サンプル"
@@ -217,6 +247,7 @@ export default function ContactPage() {
                                 <MessageSquare size={16} /> ご相談内容・コメント
                             </label>
                             <textarea
+                                name="comment"
                                 rows={4}
                                 className="w-full p-3 border border-gray-300 rounded focus:ring-2 focus:ring-[#1E3A8A] focus:border-transparent outline-none transition-shadow"
                                 placeholder="例：作成者が退職してしまい、エラーが出ているフローの修正ができずに困っている。仕様書を作成してほしいなど。"
