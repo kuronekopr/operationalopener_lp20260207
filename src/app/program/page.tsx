@@ -27,12 +27,15 @@ export default function ProgramPage() {
 
                 {/* Menu Bar (Tabs visual) */}
                 <div className="bg-[#E5E7EB] border-b border-gray-400 px-2 pt-2 flex gap-1 text-sm text-gray-700 select-none overflow-x-auto">
-                    <div className="px-6 py-2 bg-white border-t border-l border-r border-gray-400 rounded-t font-bold text-[#1E3A8A] relative -mb-[1px] z-10">
+                    <div className="px-6 py-2 bg-white border-t border-l border-r border-gray-400 rounded-t font-bold text-[#1E3A8A] relative -mb-[1px] z-10 cursor-default">
                         Overview
                     </div>
-                    <div className="px-6 py-2 bg-[#D1D5DB] border-t border-l border-r border-gray-400 rounded-t text-gray-500 hover:bg-gray-200 cursor-not-allowed opacity-70">
-                        Details (Locked)
-                    </div>
+                    <Link href="/powerautomate" className="px-6 py-2 bg-[#D1D5DB] border-t border-l border-r border-gray-400 rounded-t text-gray-600 hover:bg-gray-200 transition-colors">
+                        Power Automate
+                    </Link>
+                    <Link href="/sharepoint" className="px-6 py-2 bg-[#D1D5DB] border-t border-l border-r border-gray-400 rounded-t text-gray-600 hover:bg-gray-200 transition-colors whitespace-nowrap">
+                        SharePoint List
+                    </Link>
                 </div>
 
                 {/* Content Area */}
@@ -51,12 +54,15 @@ export default function ProgramPage() {
                     {/* Three Pillars Section */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
                         {/* Pillar 1 */}
-                        <div className="p-6 bg-gray-50 border border-gray-200 rounded shadow-sm hover:shadow-md transition-shadow relative group h-full flex flex-col">
+                        <Link href="/powerautomate" className="block p-6 bg-gray-50 border border-gray-200 rounded shadow-sm hover:shadow-md transition-shadow relative group h-full flex flex-col hover:border-blue-300">
                             <div className="absolute top-0 left-0 w-full h-1 bg-blue-500 rounded-t opacity-0 group-hover:opacity-100 transition-opacity"></div>
                             <div className="w-12 h-12 bg-blue-100 text-[#1E3A8A] rounded flex items-center justify-center mb-4">
                                 <FileText size={24} />
                             </div>
-                            <h3 className="text-xl font-bold text-[#1F2937] mb-3">1. 文書化</h3>
+                            <h3 className="text-xl font-bold text-[#1F2937] mb-3 flex items-center gap-2">
+                                1. 文書化
+                                <ArrowRightCircle size={18} className="text-blue-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+                            </h3>
                             <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-1">
                                 既存のPower Automateフローを解析し、人間が理解できる「業務仕様書」として再構築します。
                                 ロジックの意図、例外処理、依存関係を明確化します。
@@ -66,15 +72,18 @@ export default function ProgramPage() {
                                 <li className="flex items-center gap-2"><Check size={14} className="text-blue-600" /> 変数定義書</li>
                                 <li className="flex items-center gap-2"><Check size={14} className="text-blue-600" /> エラーハンドリング仕様</li>
                             </ul>
-                        </div>
+                        </Link>
 
                         {/* Pillar 2 */}
-                        <div className="p-6 bg-gray-50 border border-gray-200 rounded shadow-sm hover:shadow-md transition-shadow relative group h-full flex flex-col">
+                        <Link href="/sharepoint" className="block p-6 bg-gray-50 border border-gray-200 rounded shadow-sm hover:shadow-md transition-shadow relative group h-full flex flex-col hover:border-teal-300">
                             <div className="absolute top-0 left-0 w-full h-1 bg-teal-500 rounded-t opacity-0 group-hover:opacity-100 transition-opacity"></div>
                             <div className="w-12 h-12 bg-teal-100 text-teal-800 rounded flex items-center justify-center mb-4">
                                 <Database size={24} />
                             </div>
-                            <h3 className="text-xl font-bold text-[#1F2937] mb-3">2. 標準化</h3>
+                            <h3 className="text-xl font-bold text-[#1F2937] mb-3 flex items-center gap-2">
+                                2. 標準化
+                                <ArrowRightCircle size={18} className="text-teal-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+                            </h3>
                             <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-1">
                                 「誰が作っても同じ品質」になるよう、開発ルールを策定します。
                                 命名規則、フォルダ構成、共通部品の利用ガイドラインを整備します。
@@ -84,7 +93,7 @@ export default function ProgramPage() {
                                 <li className="flex items-center gap-2"><Check size={14} className="text-teal-600" /> SharePoint設計パターン</li>
                                 <li className="flex items-center gap-2"><Check size={14} className="text-teal-600" /> 権限設定基準</li>
                             </ul>
-                        </div>
+                        </Link>
 
                         {/* Pillar 3 */}
                         <div className="p-6 bg-gray-50 border border-gray-200 rounded shadow-sm hover:shadow-md transition-shadow relative group h-full flex flex-col">
@@ -142,7 +151,7 @@ export default function ProgramPage() {
                         <span>Mode: Read Only</span>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div >
+        </div >
     );
 }

@@ -42,6 +42,11 @@ export default function Footer() {
                             <li>
                                 <Link href="/about" className="hover:text-brand-blue">About Us</Link>
                             </li>
+                            <li className="pl-3 text-sm text-gray-500">
+                                <Link href="/about-en" className="hover:text-brand-blue flex items-center gap-1">
+                                    └ English
+                                </Link>
+                            </li>
                         </ul>
                     </div>
 
@@ -49,10 +54,13 @@ export default function Footer() {
                         <h3 className="font-semibold text-gray-900 mb-4">Legal</h3>
                         <ul className="space-y-2 text-sm text-gray-600">
                             <li>
-                                <Link href="/privacy" className="hover:text-brand-blue">Privacy Policy</Link>
+                                <Link href="/privacy-policy" className="hover:text-brand-blue">Privacy Policy</Link>
                             </li>
                             <li>
-                                <Link href="/terms" className="hover:text-brand-blue">Terms of Service</Link>
+                                <Link href="/terms-of-service" className="hover:text-brand-blue">Terms of Service</Link>
+                            </li>
+                            <li>
+                                <Link href="/legal-notice" className="hover:text-brand-blue">特定商取引法に基づく表記</Link>
                             </li>
                         </ul>
                     </div>

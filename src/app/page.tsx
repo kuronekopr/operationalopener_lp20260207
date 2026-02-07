@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Terminal, Minimize, Maximize, X, Shield, FileText, Database, Search } from "lucide-react";
+import { ArrowRight, Terminal, Minimize, Maximize, X, Shield, FileText, Database, Search, MessageSquare } from "lucide-react";
 
 export default function Home() {
   return (
@@ -48,14 +48,21 @@ export default function Home() {
 
             </div>
 
-            <div className="flex flex-wrap gap-4 pt-4">
-              <Link href="/program" className="legacy-button flex items-center gap-2 font-bold px-4 py-2">
-                <Shield size={16} />
-                プログラム詳細
-              </Link>
-              <Link href="/insights" className="legacy-button flex items-center gap-2 px-4 py-2">
-                <FileText size={16} />
-                Insightsを読む
+            <div className="flex flex-col gap-4 pt-4 items-start">
+              <div className="flex flex-wrap gap-4">
+                <Link href="/program" className="legacy-button flex items-center gap-2 font-bold px-4 py-2">
+                  <Shield size={16} />
+                  プログラム詳細
+                </Link>
+                <Link href="/insights" className="legacy-button flex items-center gap-2 px-4 py-2">
+                  <FileText size={16} />
+                  Insightsを読む
+                </Link>
+              </div>
+
+              <Link href="/contact" className="legacy-button w-full md:w-auto flex items-center justify-center gap-2 font-bold px-6 py-3 bg-[#1E3A8A] text-white border-2 border-[#1E3A8A] hover:bg-blue-800 shadow-md transition-all">
+                <MessageSquare size={18} />
+                無料診断ページ
               </Link>
             </div>
           </div>
@@ -79,36 +86,46 @@ export default function Home() {
 
               {/* Step 2: Overview */}
               <div className="z-10 w-full mb-4">
-                <div className="bg-white p-3 rounded-md shadow-sm border border-gray-300 flex items-center gap-3">
-                  <div className="w-8 h-8 rounded bg-gray-100 flex items-center justify-center text-gray-500">
-                    <Search size={16} />
+                <Link href="/program" className="block group">
+                  <div className="bg-white p-3 rounded-md shadow-sm border border-gray-300 flex items-center gap-3 transition-all group-hover:border-[#1E3A8A] group-hover:shadow-md group-hover:-translate-y-0.5 relative">
+                    <div className="w-8 h-8 rounded bg-gray-100 flex items-center justify-center text-gray-500 group-hover:bg-[#1E3A8A] group-hover:text-white transition-colors">
+                      <Search size={16} />
+                    </div>
+                    <span className="text-sm font-medium text-gray-700 group-hover:text-[#1E3A8A] transition-colors">サービス詳細と導入効果を確認</span>
+                    <ArrowRight size={14} className="ml-auto text-gray-300 group-hover:text-[#1E3A8A] opacity-0 group-hover:opacity-100 transition-all absolute right-2" />
                   </div>
-                  <span className="text-sm font-medium text-gray-700">サービス詳細と導入効果を確認</span>
-                </div>
+                </Link>
                 <div className="h-4"></div>
                 <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-[#8A8886] mx-auto"></div>
               </div>
 
               {/* Step 3: Power Automate Spec */}
+              {/* Step 3: Power Automate Spec */}
               <div className="z-10 w-full mb-4">
-                <div className="bg-white p-3 rounded-md shadow-sm border border-gray-300 flex items-center gap-3">
-                  <div className="w-8 h-8 rounded bg-[#0078D4] flex items-center justify-center text-white">
-                    <FileText size={16} />
+                <Link href="/powerautomate" className="block group">
+                  <div className="bg-white p-3 rounded-md shadow-sm border border-gray-300 flex items-center gap-3 transition-all group-hover:border-[#0078D4] group-hover:shadow-md group-hover:-translate-y-0.5 relative">
+                    <div className="w-8 h-8 rounded bg-[#0078D4] flex items-center justify-center text-white">
+                      <FileText size={16} />
+                    </div>
+                    <span className="text-sm font-medium text-gray-700 group-hover:text-[#0078D4] transition-colors">パワーオートメイト仕様書作成</span>
+                    <ArrowRight size={14} className="ml-auto text-gray-300 group-hover:text-[#0078D4] opacity-0 group-hover:opacity-100 transition-all absolute right-2" />
                   </div>
-                  <span className="text-sm font-medium text-gray-700">パワーオートメイト仕様書作成</span>
-                </div>
+                </Link>
                 <div className="h-4"></div>
                 <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-[#8A8886] mx-auto"></div>
               </div>
 
               {/* Step 4: SharePoint List */}
               <div className="z-10 w-full mb-4">
-                <div className="bg-white p-3 rounded-md shadow-sm border border-gray-300 flex items-center gap-3">
-                  <div className="w-8 h-8 rounded bg-[#037A7A] flex items-center justify-center text-white">
-                    <Database size={16} />
+                <Link href="/sharepoint" className="block group">
+                  <div className="bg-white p-3 rounded-md shadow-sm border border-gray-300 flex items-center gap-3 transition-all group-hover:border-[#037A7A] group-hover:shadow-md group-hover:-translate-y-0.5 relative">
+                    <div className="w-8 h-8 rounded bg-[#037A7A] flex items-center justify-center text-white">
+                      <Database size={16} />
+                    </div>
+                    <span className="text-sm font-medium text-gray-700 group-hover:text-[#037A7A] transition-colors">SPリスト作成自動化</span>
+                    <ArrowRight size={14} className="ml-auto text-gray-300 group-hover:text-[#037A7A] opacity-0 group-hover:opacity-100 transition-all absolute right-2" />
                   </div>
-                  <span className="text-sm font-medium text-gray-700">SPリスト作成自動化</span>
-                </div>
+                </Link>
                 <div className="h-4"></div>
                 <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-[#8A8886] mx-auto"></div>
               </div>
@@ -120,6 +137,8 @@ export default function Home() {
                   <span className="text-sm font-bold text-[#107C10]">業務資産化 (Completed)</span>
                 </div>
               </div>
+
+
 
             </div>
           </div>
