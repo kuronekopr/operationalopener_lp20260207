@@ -119,7 +119,7 @@ export default function AboutPage() {
                                 src="/minagawa.jpg"
                                 alt="皆川"
                                 fill
-                                className="object-cover object-top"
+                                className="object-cover object-[50%_20%]"
                             />
                         </div>
                         <div>

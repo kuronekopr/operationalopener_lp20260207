@@ -85,7 +85,7 @@ export default function ContactPage() {
                                     src="/minagawa.jpg"
                                     alt="皆川代表"
                                     fill
-                                    className="object-cover object-top"
+                                    className="object-cover object-[50%_20%]"
                                 />
                             </div>
                             <div>
