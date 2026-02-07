@@ -20,15 +20,15 @@ export default function InsightsPage() {
             color: "text-blue-500"
         },
         {
-            slug: "power-automate-desktop-spec-ai-automation",
-            title: "【2026年最新】Power Automate Desktop(PAD)仕様書作成：AI活用TIPSと「構造化解析」",
-            description: "Copilotの概要生成、Robinスクリプト解析、セレクター解読。2026年のPAD仕様書作成術と、デスクトップフロー特有の属人化を防ぐ「完全自動化」のアプローチ。",
-            date: "2026.02.01",
+            slug: "sharepoint-list-design-best-practices",
+            title: "【脱Excel】失敗しないSharePointリスト設計：3つの鉄則とデータ資産化",
+            description: "「Excel感覚で作ると失敗する」SharePointリスト。5000件問題、委任警告、権限管理の泥沼を回避し、Power Automate連携を前提とした堅牢な設計手法を公開。",
+            date: "2026.01.28",
             category: "Methodology",
-            badgeColor: "bg-gray-100 text-gray-800",
+            badgeColor: "bg-green-100 text-green-800",
             readTime: "10 min read",
-            icon: Monitor,
-            color: "text-gray-600"
+            icon: FileSpreadsheet,
+            color: "text-green-600"
         },
         {
             slug: "power-apps-spec-ai-automation",
@@ -42,15 +42,15 @@ export default function InsightsPage() {
             color: "text-fuchsia-600"
         },
         {
-            slug: "sharepoint-list-design-best-practices",
-            title: "【脱Excel】失敗しないSharePointリスト設計：3つの鉄則とデータ資産化",
-            description: "「Excel感覚で作ると失敗する」SharePointリスト。5000件問題、委任警告、権限管理の泥沼を回避し、Power Automate連携を前提とした堅牢な設計手法を公開。",
-            date: "2026.01.28",
+            slug: "power-automate-desktop-spec-ai-automation",
+            title: "【2026年最新】Power Automate Desktop(PAD)仕様書作成：AI活用TIPSと「構造化解析」",
+            description: "Copilotの概要生成、Robinスクリプト解析、セレクター解読。2026年のPAD仕様書作成術と、デスクトップフロー特有の属人化を防ぐ「完全自動化」のアプローチ。",
+            date: "2026.02.01",
             category: "Methodology",
-            badgeColor: "bg-green-100 text-green-800",
+            badgeColor: "bg-gray-100 text-gray-800",
             readTime: "10 min read",
-            icon: FileSpreadsheet,
-            color: "text-green-600"
+            icon: Monitor,
+            color: "text-gray-600"
         }
     ];
 
