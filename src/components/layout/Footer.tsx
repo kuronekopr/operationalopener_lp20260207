@@ -54,6 +54,9 @@ export default function Footer() {
                             <li>
                                 <Link href="/terms-of-service" className="hover:text-brand-blue">Terms of Service</Link>
                             </li>
+                            <li>
+                                <Link href="/legal-notice" className="hover:text-brand-blue">特定商取引法に基づく表記</Link>
+                            </li>
                         </ul>
                     </div>
                 </div>

@@ -48,14 +48,21 @@ export default function Home() {
 
             </div>
 
-            <div className="flex flex-wrap gap-4 pt-4">
-              <Link href="/program" className="legacy-button flex items-center gap-2 font-bold px-4 py-2">
-                <Shield size={16} />
-                プログラム詳細
-              </Link>
-              <Link href="/insights" className="legacy-button flex items-center gap-2 px-4 py-2">
-                <FileText size={16} />
-                Insightsを読む
+            <div className="flex flex-col gap-4 pt-4 items-start">
+              <div className="flex flex-wrap gap-4">
+                <Link href="/program" className="legacy-button flex items-center gap-2 font-bold px-4 py-2">
+                  <Shield size={16} />
+                  プログラム詳細
+                </Link>
+                <Link href="/insights" className="legacy-button flex items-center gap-2 px-4 py-2">
+                  <FileText size={16} />
+                  Insightsを読む
+                </Link>
+              </div>
+
+              <Link href="/contact" className="legacy-button w-full md:w-auto flex items-center justify-center gap-2 font-bold px-6 py-3 bg-[#1E3A8A] text-white border-2 border-[#1E3A8A] hover:bg-blue-800 shadow-md transition-all">
+                <MessageSquare size={18} />
+                無料診断ページ
               </Link>
             </div>
           </div>
@@ -128,16 +135,7 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Call to Action for Contact */}
-              <div className="mt-8 relative w-full flex flex-col items-center animate-bounce-slow">
-                <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-[#8A8886] mb-4"></div>
-                <Link href="/contact" className="inline-flex items-center gap-3 bg-[#1E3A8A] text-white px-8 py-4 rounded-full font-bold shadow-lg hover:bg-blue-800 transition-all hover:scale-105 group border-2 border-white/20 select-none">
-                  <MessageSquare size={20} />
-                  <span className="text-lg">無料診断を申し込む</span>
-                  <ArrowRight size={20} className="opacity-70 group-hover:translate-x-1 transition-transform" />
-                </Link>
-                <p className="text-xs text-gray-400 mt-2 font-mono">Execute: Diagnostic.exe</p>
-              </div>
+
 
             </div>
           </div>
