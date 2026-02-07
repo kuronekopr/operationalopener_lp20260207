@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, FileText, Folder, Search, Monitor, HardDrive, ChevronRight, FileCode, FileSpreadsheet } from "lucide-react";
+import { ArrowLeft, FileText, Folder, Search, Monitor, HardDrive, ChevronRight, FileCode, FileSpreadsheet, Lightbulb, ArrowRight, TabletSmartphone } from "lucide-react";
 
 export const metadata = {
     title: "Insights (Knowledge Base) | Operational Opener",
@@ -9,44 +9,48 @@ export const metadata = {
 export default function InsightsPage() {
     const articles = [
         {
-            slug: "power-automate-specification-ai",
-            filename: "20260201_AI_Spec_Generation_Guide.pdf",
-            title: "【最新TIPS】Power Automate仕様書作成とAI活用の限界",
-            type: "PDF Document",
-            size: "2.4 MB",
-            date: "2026/02/01 10:00",
+            slug: "power-automate-spec-ai-automation",
+            title: "【2026年最新】Power Automate仕様書作成：AI活用TIPSと「構造化解析」の決定的な違い",
+            description: "Copilot、JSON解析、Mermaid、Word Agent。2026年の最新AI活用手法4選と、それでも残る「属人化リスク」への決定解を徹底解説。",
+            date: "2026.02.01",
+            category: "Methodology",
+            badgeColor: "bg-blue-100 text-blue-800",
+            readTime: "12 min read",
             icon: FileText,
-            color: "text-red-500"
+            color: "text-blue-500"
         },
         {
-            slug: "#", // Placeholder
-            filename: "SharePoint_List_Design_Pattern_v2.xlsx",
-            title: "【設計】壊れないSharePointリスト設計のベストプラクティス",
-            type: "Excel Sheet",
-            size: "1.8 MB",
-            date: "2026/01/28 14:30",
+            slug: "power-automate-desktop-spec-ai-automation",
+            title: "【2026年最新】Power Automate Desktop(PAD)仕様書作成：AI活用TIPSと「構造化解析」",
+            description: "Copilotの概要生成、Robinスクリプト解析、セレクター解読。2026年のPAD仕様書作成術と、デスクトップフロー特有の属人化を防ぐ「完全自動化」のアプローチ。",
+            date: "2026.02.01",
+            category: "Methodology",
+            badgeColor: "bg-gray-100 text-gray-800",
+            readTime: "10 min read",
+            icon: Monitor,
+            color: "text-gray-600"
+        },
+        {
+            slug: "power-apps-spec-ai-automation",
+            title: "【2026年最新】Power Apps仕様書作成：AI活用TIPSと「構造化解析」の決定的な違い",
+            description: "PAC CLIによるYAML解析、Copilotでのドキュメント化。複雑化するCanvasアプリの仕様書作成を「ソースコードレベル」で自動化する最新手法。",
+            date: "2026.02.01",
+            category: "Methodology",
+            badgeColor: "bg-fuchsia-100 text-fuchsia-800",
+            readTime: "12 min read",
+            icon: TabletSmartphone,
+            color: "text-fuchsia-600"
+        },
+        {
+            slug: "sharepoint-list-design-best-practices",
+            title: "【脱Excel】失敗しないSharePointリスト設計：3つの鉄則とデータ資産化",
+            description: "「Excel感覚で作ると失敗する」SharePointリスト。5000件問題、委任警告、権限管理の泥沼を回避し、Power Automate連携を前提とした堅牢な設計手法を公開。",
+            date: "2026.01.28",
+            category: "Methodology",
+            badgeColor: "bg-green-100 text-green-800",
+            readTime: "10 min read",
             icon: FileSpreadsheet,
             color: "text-green-600"
-        },
-        {
-            slug: "#", // Placeholder
-            filename: "LLM_Operational_Optimization.pptx",
-            title: "【教育】LLM時代の業務オペレーション最適化とは",
-            type: "PowerPoint",
-            size: "5.1 MB",
-            date: "2026/01/15 09:15",
-            icon: Monitor,
-            color: "text-orange-500"
-        },
-        {
-            slug: "#",
-            filename: "RPA_vs_PowerAutomate_Comparison.html",
-            title: "【比較】従来型RPAとPower Automateクラウドフローの決定的な違い",
-            type: "HTML File",
-            size: "15 KB",
-            date: "2025/12/20 18:45",
-            icon: FileCode,
-            color: "text-blue-500"
         }
     ];
 
@@ -94,82 +98,82 @@ export default function InsightsPage() {
                 {/* Content (Split View: Sidebar + Main) */}
                 <div className="flex-1 flex overflow-hidden bg-white">
 
-                    {/* Sidebar (Tree View) */}
-                    <div className="w-64 border-r border-gray-200 p-2 bg-[#F9FAFB] hidden md:block overflow-y-auto">
-                        <div className="text-sm">
-                            <div className="flex items-center gap-1 px-2 py-1 hover:bg-blue-100 cursor-pointer text-gray-700">
-                                <ChevronRight size={12} className="text-gray-400" />
-                                <Monitor size={14} />
-                                <span>Desktop</span>
+                    {/* Sidebar (Blog Categories) */}
+                    <div className="w-64 border-r border-gray-200 p-4 bg-[#F9FAFB] hidden md:block overflow-y-auto">
+                        <h3 className="font-bold text-gray-700 mb-4 px-2">Categories</h3>
+                        <nav className="space-y-1">
+                            <div className="flex items-center gap-2 px-3 py-2 bg-blue-100 text-blue-800 rounded-md font-medium cursor-pointer">
+                                <Folder size={16} />
+                                <span>All Insights</span>
                             </div>
-                            <div className="flex items-center gap-1 px-2 py-1 hover:bg-blue-100 cursor-pointer text-gray-700">
-                                <ChevronRight size={12} className="rotate-90 text-gray-600" />
-                                <HardDrive size={14} />
-                                <span>Local Disk (D:)</span>
+                            <div className="flex items-center gap-2 px-3 py-2 text-gray-600 hover:bg-gray-100 rounded-md cursor-pointer transition-colors">
+                                <FileCode size={16} className="text-gray-400" />
+                                <span>Methodology</span>
                             </div>
-                            <div className="pl-6">
-                                <div className="flex items-center gap-1 px-2 py-1 bg-blue-100 border border-blue-200 rounded-sm cursor-pointer text-gray-800 font-medium">
-                                    <Folder size={14} className="text-yellow-500" />
-                                    <span>Insights & Knowledge</span>
-                                </div>
-                                <div className="pl-6 flex flex-col gap-0.5 mt-1 border-l border-gray-200 ml-2">
-                                    <div className="flex items-center gap-1 px-2 py-1 hover:bg-gray-100 rounded-sm cursor-pointer text-gray-600">
-                                        <Folder size={14} className="text-yellow-500" />
-                                        <span>Methodology</span>
-                                    </div>
-                                    <div className="flex items-center gap-1 px-2 py-1 hover:bg-gray-100 rounded-sm cursor-pointer text-gray-600">
-                                        <Folder size={14} className="text-yellow-500" />
-                                        <span>Comparison</span>
-                                    </div>
-                                    <div className="flex items-center gap-1 px-2 py-1 hover:bg-gray-100 rounded-sm cursor-pointer text-gray-600">
-                                        <Folder size={14} className="text-yellow-500" />
-                                        <span>Education</span>
-                                    </div>
-                                </div>
+                            <div className="flex items-center gap-2 px-3 py-2 text-gray-600 hover:bg-gray-100 rounded-md cursor-pointer transition-colors">
+                                <Monitor size={16} className="text-gray-400" />
+                                <span>Comparison</span>
+                            </div>
+                            <div className="flex items-center gap-2 px-3 py-2 text-gray-600 hover:bg-gray-100 rounded-md cursor-pointer transition-colors">
+                                <Lightbulb size={16} className="text-gray-400" />
+                                <span>Education</span>
+                            </div>
+                        </nav>
+
+                        <div className="mt-8 border-t border-gray-200 pt-6 px-2">
+                            <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Tags</h4>
+                            <div className="flex flex-wrap gap-2">
+                                <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full border border-gray-200">#PowerAutomate</span>
+                                <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full border border-gray-200">#SharePoint</span>
+                                <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full border border-gray-200">#RPA</span>
+                                <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full border border-gray-200">#DX</span>
                             </div>
                         </div>
                     </div>
 
-                    {/* Main View (File List) */}
-                    <div className="flex-1 overflow-y-auto bg-white">
-                        <table className="w-full text-sm text-left border-collapse">
-                            <thead className="bg-white sticky top-0 z-10">
-                                <tr className="text-gray-500 border-b border-gray-200 select-none">
-                                    <th className="font-normal px-4 py-2 border-r border-gray-200 hover:bg-gray-100 w-[40%]">Name</th>
-                                    <th className="font-normal px-4 py-2 border-r border-gray-200 hover:bg-gray-100 w-[20%]">Date modified</th>
-                                    <th className="font-normal px-4 py-2 border-r border-gray-200 hover:bg-gray-100 w-[20%]">Type</th>
-                                    <th className="font-normal px-4 py-2 hover:bg-gray-100 w-[20%]">Size</th>
-                                </tr>
-                            </thead>
-                            <tbody className="text-gray-700">
-                                {articles.map((article, i) => (
-                                    <tr key={i} className="hover:bg-blue-50 group cursor-pointer transition-colors border-b border-gray-50">
-                                        <td className="px-4 py-2">
-                                            <Link href={`/insights/${article.slug}`} className="flex items-center gap-3">
-                                                <article.icon size={18} className={article.color} />
-                                                <div className="flex flex-col">
-                                                    <span className="font-medium text-gray-800 group-hover:text-blue-700">{article.filename}</span>
-                                                    <span className="text-xs text-gray-400 md:hidden">{article.title}</span>
-                                                    <span className="text-xs text-gray-500 hidden md:block">{article.title}</span>
+                    {/* Main View (Blog List) */}
+                    <div className="flex-1 overflow-y-auto bg-white p-6 md:p-10">
+                        <div className="max-w-3xl mx-auto space-y-8">
+
+                            {articles.map((article, i) => (
+                                <Link key={i} href={`/insights/${article.slug}`} className="block group">
+                                    <article className="border border-gray-200 rounded-lg p-6 hover:shadow-md hover:border-blue-300 transition-all bg-white relative overflow-hidden">
+                                        <div className="absolute top-0 left-0 w-1 h-full bg-gray-200 group-hover:bg-blue-500 transition-colors"></div>
+
+                                        <div className="pl-4">
+                                            <div className="flex items-center gap-3 mb-3 text-sm">
+                                                <span className={`px-2 py-0.5 rounded text-xs font-bold ${article.badgeColor} border`}>
+                                                    {article.category}
+                                                </span>
+                                                <span className="text-gray-500">{article.date}</span>
+                                            </div>
+
+                                            <h2 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-blue-700 transition-colors flex items-center gap-2">
+                                                {article.title}
+                                                <ArrowRight size={16} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-blue-500" />
+                                            </h2>
+
+                                            <p className="text-gray-600 leading-relaxed mb-4">
+                                                {article.description}
+                                            </p>
+
+                                            <div className="flex items-center gap-4 text-xs text-gray-500">
+                                                <div className="flex items-center gap-1">
+                                                    <article.icon size={14} className={article.color} />
+                                                    <span>{article.readTime}</span>
                                                 </div>
-                                            </Link>
-                                        </td>
-                                        <td className="px-4 py-2 text-gray-500">{article.date}</td>
-                                        <td className="px-4 py-2 text-gray-500">{article.type}</td>
-                                        <td className="px-4 py-2 text-gray-500 font-mono text-xs">{article.size}</td>
-                                    </tr>
-                                ))}
-                                {/* Empty rows filler */}
-                                {[...Array(5)].map((_, i) => (
-                                    <tr key={`empty-${i}`} className="h-10">
-                                        <td className="px-4 border-b border-gray-50"></td>
-                                        <td className="px-4 border-b border-gray-50"></td>
-                                        <td className="px-4 border-b border-gray-50"></td>
-                                        <td className="px-4 border-b border-gray-50"></td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </Link>
+                            ))}
+
+                            {/* Coming Soon */}
+                            <div className="text-center py-12 border-t border-gray-100">
+                                <p className="text-gray-400 text-sm">More insights are being processed...</p>
+                            </div>
+
+                        </div>
                     </div>
 
                 </div>

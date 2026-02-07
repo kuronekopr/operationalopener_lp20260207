@@ -90,25 +90,32 @@ export default function Home() {
               </div>
 
               {/* Step 3: Power Automate Spec */}
+              {/* Step 3: Power Automate Spec */}
               <div className="z-10 w-full mb-4">
-                <div className="bg-white p-3 rounded-md shadow-sm border border-gray-300 flex items-center gap-3">
-                  <div className="w-8 h-8 rounded bg-[#0078D4] flex items-center justify-center text-white">
-                    <FileText size={16} />
+                <Link href="/powerautomate" className="block group">
+                  <div className="bg-white p-3 rounded-md shadow-sm border border-gray-300 flex items-center gap-3 transition-all group-hover:border-[#0078D4] group-hover:shadow-md group-hover:-translate-y-0.5 relative">
+                    <div className="w-8 h-8 rounded bg-[#0078D4] flex items-center justify-center text-white">
+                      <FileText size={16} />
+                    </div>
+                    <span className="text-sm font-medium text-gray-700 group-hover:text-[#0078D4] transition-colors">パワーオートメイト仕様書作成</span>
+                    <ArrowRight size={14} className="ml-auto text-gray-300 group-hover:text-[#0078D4] opacity-0 group-hover:opacity-100 transition-all absolute right-2" />
                   </div>
-                  <span className="text-sm font-medium text-gray-700">パワーオートメイト仕様書作成</span>
-                </div>
+                </Link>
                 <div className="h-4"></div>
                 <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-[#8A8886] mx-auto"></div>
               </div>
 
               {/* Step 4: SharePoint List */}
               <div className="z-10 w-full mb-4">
-                <div className="bg-white p-3 rounded-md shadow-sm border border-gray-300 flex items-center gap-3">
-                  <div className="w-8 h-8 rounded bg-[#037A7A] flex items-center justify-center text-white">
-                    <Database size={16} />
+                <Link href="/sharepoint" className="block group">
+                  <div className="bg-white p-3 rounded-md shadow-sm border border-gray-300 flex items-center gap-3 transition-all group-hover:border-[#037A7A] group-hover:shadow-md group-hover:-translate-y-0.5 relative">
+                    <div className="w-8 h-8 rounded bg-[#037A7A] flex items-center justify-center text-white">
+                      <Database size={16} />
+                    </div>
+                    <span className="text-sm font-medium text-gray-700 group-hover:text-[#037A7A] transition-colors">SPリスト作成自動化</span>
+                    <ArrowRight size={14} className="ml-auto text-gray-300 group-hover:text-[#037A7A] opacity-0 group-hover:opacity-100 transition-all absolute right-2" />
                   </div>
-                  <span className="text-sm font-medium text-gray-700">SPリスト作成自動化</span>
-                </div>
+                </Link>
                 <div className="h-4"></div>
                 <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-[#8A8886] mx-auto"></div>
               </div>

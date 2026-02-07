@@ -26,11 +26,14 @@ export default function SharePointPage() {
 
                 {/* Menu Bar (Tabs visual) */}
                 <div className="bg-[#E5E7EB] border-b border-gray-400 px-2 pt-2 flex gap-1 text-sm text-gray-700 select-none overflow-x-auto">
-                    <div className="px-6 py-2 bg-white border-t border-l border-r border-gray-400 rounded-t font-bold text-[#1E3A8A] relative -mb-[1px] z-10">
+                    <Link href="/program" className="px-6 py-2 bg-[#D1D5DB] border-t border-l border-r border-gray-400 rounded-t text-gray-600 hover:bg-gray-200 transition-colors">
                         Overview
-                    </div>
-                    <div className="px-6 py-2 bg-[#D1D5DB] border-t border-l border-r border-gray-400 rounded-t text-gray-500 hover:bg-gray-200 cursor-not-allowed opacity-70">
-                        Data Model (Locked)
+                    </Link>
+                    <Link href="/powerautomate" className="px-6 py-2 bg-[#D1D5DB] border-t border-l border-r border-gray-400 rounded-t text-gray-600 hover:bg-gray-200 transition-colors">
+                        Power Automate
+                    </Link>
+                    <div className="px-6 py-2 bg-white border-t border-l border-r border-gray-400 rounded-t font-bold text-[#1E3A8A] relative -mb-[1px] z-10 cursor-default whitespace-nowrap">
+                        SharePoint List
                     </div>
                 </div>
 

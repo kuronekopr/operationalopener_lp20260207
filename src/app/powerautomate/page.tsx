@@ -11,8 +11,8 @@ export default function PowerAutomatePage() {
         <div className="min-h-screen p-4 md:p-8 flex items-center justify-center bg-[#E5E7EB]">
             {/* Window Container */}
             <div className="w-full max-w-5xl legacy-window flex flex-col min-h-[800px] bg-[#F3F4F6]">
-                {/* Title Bar - Power Automate Blue */}
-                <div className="bg-[#0078D4] text-white px-3 py-1.5 flex items-center justify-between select-none shadow-sm">
+                {/* Title Bar - Brand Navy */}
+                <div className="bg-[#1E3A8A] text-white px-3 py-1.5 flex items-center justify-between select-none shadow-sm">
                     <div className="flex items-center gap-2">
                         <FileText size={16} />
                         <span className="font-bold text-sm tracking-wide">SpecGenerator_for_PowerAutomate.exe</span>
@@ -24,13 +24,17 @@ export default function PowerAutomatePage() {
                     </div>
                 </div>
 
-                {/* Menubar simulation */}
-                <div className="bg-[#E5E7EB] border-b border-gray-400 px-3 py-1 text-sm text-gray-700 flex gap-6 select-none shadow-sm">
-                    <span className="hover:bg-gray-200 px-2 rounded cursor-default">File</span>
-                    <span className="hover:bg-gray-200 px-2 rounded cursor-default">Edit</span>
-                    <span className="hover:bg-gray-200 px-2 rounded cursor-default">View</span>
-                    <span className="hover:bg-gray-200 px-2 rounded cursor-default font-bold text-[#0078D4]">Generate Spec</span>
-                    <span className="hover:bg-gray-200 px-2 rounded cursor-default">Help</span>
+                {/* Menu Bar (Tabs visual) */}
+                <div className="bg-[#E5E7EB] border-b border-gray-400 px-2 pt-2 flex gap-1 text-sm text-gray-700 select-none overflow-x-auto">
+                    <Link href="/program" className="px-6 py-2 bg-[#D1D5DB] border-t border-l border-r border-gray-400 rounded-t text-gray-600 hover:bg-gray-200 transition-colors">
+                        Overview
+                    </Link>
+                    <div className="px-6 py-2 bg-white border-t border-l border-r border-gray-400 rounded-t font-bold text-[#1E3A8A] relative -mb-[1px] z-10 cursor-default">
+                        Power Automate
+                    </div>
+                    <Link href="/sharepoint" className="px-6 py-2 bg-[#D1D5DB] border-t border-l border-r border-gray-400 rounded-t text-gray-600 hover:bg-gray-200 transition-colors whitespace-nowrap">
+                        SharePoint List
+                    </Link>
                 </div>
 
                 {/* Content */}
@@ -38,7 +42,7 @@ export default function PowerAutomatePage() {
 
                     {/* Hero Section */}
                     <div className="mb-16 text-center">
-                        <h1 className="text-3xl md:text-5xl font-extrabold text-[#1F2937] mb-6 leading-tight">
+                        <h1 className="text-2xl md:text-3xl font-extrabold text-[#1F2937] mb-6 leading-tight">
                             「そのフロー、<br className="md:hidden" />作った人しか直せません」<br />を終わらせる。
                         </h1>
                         <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
