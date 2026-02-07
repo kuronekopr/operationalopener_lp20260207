@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Terminal, Minimize, Maximize, X, Shield, FileText, Database, Search } from "lucide-react";
+import { ArrowRight, Terminal, Minimize, Maximize, X, Shield, FileText, Database, Search, MessageSquare } from "lucide-react";
 
 export default function Home() {
   return (
@@ -126,6 +126,17 @@ export default function Home() {
                   <Shield size={16} className="text-[#107C10]" />
                   <span className="text-sm font-bold text-[#107C10]">業務資産化 (Completed)</span>
                 </div>
+              </div>
+
+              {/* Call to Action for Contact */}
+              <div className="mt-8 relative w-full flex flex-col items-center animate-bounce-slow">
+                <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-[#8A8886] mb-4"></div>
+                <Link href="/contact" className="inline-flex items-center gap-3 bg-[#1E3A8A] text-white px-8 py-4 rounded-full font-bold shadow-lg hover:bg-blue-800 transition-all hover:scale-105 group border-2 border-white/20 select-none">
+                  <MessageSquare size={20} />
+                  <span className="text-lg">無料診断を申し込む</span>
+                  <ArrowRight size={20} className="opacity-70 group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <p className="text-xs text-gray-400 mt-2 font-mono">Execute: Diagnostic.exe</p>
               </div>
 
             </div>
