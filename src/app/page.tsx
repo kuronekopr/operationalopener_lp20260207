@@ -1,197 +1,113 @@
 import Link from "next/link";
-import {
-  Play,
-  AlertTriangle,
-  CheckCircle2,
-  FileText,
-  GitBranch,
-  Search,
-  ShieldCheck,
-  ArrowRight
-} from "lucide-react";
-import FlowCard from "@/components/ui/FlowCard";
+import { ArrowRight, Terminal, Minimize, Maximize, X, Shield, FileText, Database } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="min-h-screen pb-20 relative overflow-hidden">
-      {/* Background Dot Pattern */}
-      <div className="absolute inset-0 z-0 opacity-40 pointer-events-none"
-        style={{
-          backgroundImage: 'radial-gradient(#CBD5E1 1px, transparent 1px)',
-          backgroundSize: '24px 24px'
-        }}>
-      </div>
-
-      <div className="relative z-10 max-w-3xl mx-auto px-4 py-12 flex flex-col items-center">
-
-        {/* === START NODE / TRIGGER === */}
-        <div className="mb-2 text-xs font-semibold text-gray-400 tracking-wider uppercase">Trigger</div>
-        <div className="w-full">
-          <div className="bg-white rounded-lg border border-card-border shadow-md p-6 relative overflow-hidden group hover:border-brand-blue transition-colors">
-            <div className="absolute top-0 left-0 w-1.5 h-full bg-brand-blue"></div>
-            <div className="flex items-start gap-4">
-              <div className="p-3 bg-brand-blue/10 rounded-md text-brand-blue">
-                <Play size={24} />
-              </div>
-              <div>
-                <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
-                  止まらない、説明できる業務へ。
-                </h1>
-                <p className="text-gray-600 leading-relaxed">
-                  Power Automateで自動化した業務。<br className="md:hidden" />
-                  作った人がいなくなったら、<br className="md:hidden" />
-                  説明できますか？
-                </p>
-              </div>
-            </div>
-
-            {/* Decoration */}
-            <div className="mt-6 flex flex-wrap gap-2">
-              <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded border border-gray-200">Manual Trigger</span>
-              <span className="px-2 py-1 bg-blue-50 text-brand-blue text-xs rounded border border-blue-100">Operational Continuity</span>
-            </div>
+    <div className="min-h-screen p-4 md:p-8 flex items-center justify-center">
+      {/* Main App Container */}
+      <div className="w-full max-w-4xl legacy-window overflow-hidden flex flex-col min-h-[600px]">
+        {/* Window Title Bar */}
+        <div className="bg-[#1E3A8A] text-white px-3 py-1.5 flex items-center justify-between select-none">
+          <div className="flex items-center gap-2">
+            <Terminal size={16} />
+            <span className="font-bold text-sm tracking-wide">Operational Opener ver 2026.02</span>
+          </div>
+          <div className="flex items-center gap-1">
+            <button className="p-1 hover:bg-white/10 rounded-sm" aria-label="Minimize"><Minimize size={14} /></button>
+            <button className="p-1 hover:bg-white/10 rounded-sm" aria-label="Maximize"><Maximize size={14} /></button>
+            <button className="p-1 hover:bg-red-500 rounded-sm" aria-label="Close"><X size={14} /></button>
           </div>
         </div>
 
-        {/* CONNECTOR */}
-        <div className="h-12 w-0.5 bg-connector relative">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-white border-2 border-connector rounded-full flex items-center justify-center">
-            <div className="w-1.5 h-1.5 bg-connector rounded-full"></div>
-          </div>
+        {/* Menu Bar (Visual Only) */}
+        <div className="bg-[#E5E7EB] border-b border-gray-400 px-2 py-1 flex items-center gap-4 text-sm text-gray-700 select-none">
+          <span className="hover:bg-gray-300 px-2 py-0.5 rounded cursor-pointer">File</span>
+          <span className="hover:bg-gray-300 px-2 py-0.5 rounded cursor-pointer">Edit</span>
+          <span className="hover:bg-gray-300 px-2 py-0.5 rounded cursor-pointer">View</span>
+          <span className="hover:bg-gray-300 px-2 py-0.5 rounded cursor-pointer">Tools</span>
+          <span className="hover:bg-gray-300 px-2 py-0.5 rounded cursor-pointer">Help</span>
         </div>
 
-        {/* === CONDITION NODE (PROBLEM) === */}
-        <div className="mb-2 text-xs font-semibold text-gray-400 tracking-wider uppercase">Condition: 担当者が不在になったら？</div>
-        <div className="w-full bg-white rounded-lg border border-card-border shadow-md p-1 relative">
-          <div className="p-4 bg-gray-50 border-b border-gray-100 flex items-center gap-3">
-            <GitBranch className="text-gray-500" size={20} />
-            <span className="font-semibold text-gray-700">条件分岐: 自動化の属人化チェック</span>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-            {/* YES BRANCH (Current State) */}
-            <div className="p-6 border-b md:border-b-0 md:border-r border-gray-100 relative">
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white px-2 py-0.5 text-xs font-bold text-gray-500 border border-gray-200 rounded">
-                Yes (現状)
+        {/* Content Area */}
+        <div className="flex-1 bg-white p-6 md:p-12 md:flex md:gap-12 items-center">
+          {/* Left Column: Text */}
+          <div className="flex-1 space-y-8">
+            <div className="space-y-4">
+              <div className="inline-block px-2 py-1 bg-yellow-100 border border-yellow-300 text-yellow-800 text-xs font-mono mb-2">
+                WARNING: PERSON_DEPENDENCY_DETECTED
               </div>
-              <div className="space-y-4 pt-4">
-                <div className="flex items-start gap-3 opacity-75">
-                  <AlertTriangle className="text-orange-500 shrink-0 mt-1" size={18} />
-                  <p className="text-sm text-gray-600">何を判断しているか分からない</p>
-                </div>
-                <div className="flex items-start gap-3 opacity-75">
-                  <AlertTriangle className="text-orange-500 shrink-0 mt-1" size={18} />
-                  <p className="text-sm text-gray-600">なぜこの分岐があるのか説明できない</p>
-                </div>
-                <div className="flex items-start gap-3 opacity-75">
-                  <AlertTriangle className="text-orange-500 shrink-0 mt-1" size={18} />
-                  <p className="text-sm text-gray-600">変更履歴が残っていない</p>
-                </div>
 
-                <div className="mt-4 p-3 bg-red-50 border border-red-100 rounded text-red-700 text-sm font-medium text-center">
-                  業務停止リスクあり
-                </div>
+              <h1 className="text-3xl md:text-4xl font-extrabold text-[#1F2937] leading-tight">
+                止まらない、<br />
+                説明できる業務へ。
+              </h1>
+
+              <div className="space-y-2 text-gray-700 font-medium">
+                <p>Power Automateで自動化した業務。</p>
+                <p>作った人がいなくなったら、<br />説明できますか？</p>
+              </div>
+
+              <div className="pt-4 p-4 bg-gray-50 border border-gray-200 rounded text-sm text-gray-600 font-mono">
+                &gt; Detecting black box flows...<br />
+                &gt; Critical logic found in user's head.<br />
+                &gt; Risk assessment: HIGH
               </div>
             </div>
 
-            {/* NO BRANCH (Ideal State) */}
-            <div className="p-6 bg-blue-50/30 relative">
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white px-2 py-0.5 text-xs font-bold text-brand-blue border border-brand-blue rounded">
-                No (理想)
-              </div>
-              <div className="space-y-4 pt-4">
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="text-brand-blue shrink-0 mt-1" size={18} />
-                  <p className="text-sm text-gray-700">判断ロジックが文書化されている</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="text-brand-blue shrink-0 mt-1" size={18} />
-                  <p className="text-sm text-gray-700">変更の理由を誰でも追える</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="text-brand-blue shrink-0 mt-1" size={18} />
-                  <p className="text-sm text-gray-700">人が辞めても業務は止まらない</p>
-                </div>
+            <div className="flex flex-wrap gap-4 pt-4">
+              <Link href="/program" className="legacy-button flex items-center gap-2 font-bold px-4 py-2">
+                <Shield size={16} />
+                プログラム詳細
+              </Link>
+              <Link href="/insights" className="legacy-button flex items-center gap-2 px-4 py-2">
+                <FileText size={16} />
+                Insightsを読む
+              </Link>
+            </div>
+          </div>
 
-                <div className="mt-4 p-3 bg-brand-blue/10 border border-brand-blue/20 rounded text-brand-dark text-sm font-medium text-center">
-                  Operational Continuity
+          {/* Right Column: Visual Metaphor */}
+          <div className="flex-1 mt-8 md:mt-0 relative flex justify-center">
+            {/* Visual representation of "Assetizing" */}
+            <div className="relative w-64 h-64 border-2 border-dashed border-gray-300 rounded-lg p-4 flex flex-col items-center justify-center bg-gray-50">
+              <div className="text-gray-400 absolute top-2 left-2 text-xs font-mono">/repository/assets</div>
+
+              <div className="grid grid-cols-2 gap-4 w-full h-full p-4">
+                <div className="bg-white border border-gray-300 shadow-sm p-2 flex flex-col items-center justify-center gap-1 group">
+                  <FileText className="text-[#1E3A8A] group-hover:scale-110 transition-transform" />
+                  <span className="text-[10px] text-gray-500">Spec.md</span>
                 </div>
+                <div className="bg-white border border-gray-300 shadow-sm p-2 flex flex-col items-center justify-center gap-1 group">
+                  <Database className="text-[#1E3A8A] group-hover:scale-110 transition-transform" />
+                  <span className="text-[10px] text-gray-500">Logic.json</span>
+                </div>
+                <div className="bg-white border border-gray-300 shadow-sm p-2 flex flex-col items-center justify-center gap-1 group">
+                  <Terminal className="text-[#1E3A8A] group-hover:scale-110 transition-transform" />
+                  <span className="text-[10px] text-gray-500">Config.yaml</span>
+                </div>
+                <div className="bg-white border border-gray-300 shadow-sm p-2 flex flex-col items-center justify-center gap-1 group">
+                  <Shield className="text-[#059669] group-hover:scale-110 transition-transform" />
+                  <span className="text-[10px] text-gray-500">Policy</span>
+                </div>
+              </div>
+
+              {/* Overlay Label */}
+              <div className="absolute -bottom-4 bg-[#1E3A8A] text-white text-xs px-3 py-1 rounded shadow-md font-bold tracking-wider">
+                ASSETIZED
               </div>
             </div>
           </div>
         </div>
 
-        {/* CONNECTOR - Merging back */}
-        <div className="h-12 w-0.5 bg-connector"></div>
-
-        {/* === ACTION NODE (SOLUTION) === */}
-        <div className="mb-2 text-xs font-semibold text-gray-400 tracking-wider uppercase">Action: Apply to each "Black Box"</div>
-        <div className="w-full space-y-4">
-          {/* Card 1 */}
-          <FlowCard
-            icon={Search}
-            iconColor="bg-purple-600"
-            title="Power Automateの構造解析"
-            description="フロー構造を解析し、トリガー、判断基準、例外処理を特定します。"
-          />
-          {/* Connector between Items */}
-          <div className="h-4 w-0.5 bg-connector mx-8"></div>
-
-          {/* Card 2 */}
-          <FlowCard
-            icon={FileText}
-            iconColor="bg-blue-600"
-            title="業務仕様書として整理"
-            description="何をトリガーに、どんな判断を行い、例外時にどう振る舞うかを文書化します。"
-          />
-          {/* Connector between Items */}
-          <div className="h-4 w-0.5 bg-connector mx-8"></div>
-
-          {/* Card 3 */}
-          <FlowCard
-            icon={ShieldCheck}
-            iconColor="bg-green-600"
-            title="GitHubによるバージョン管理"
-            description="仕様書はGitHubで管理。どこが、いつ、なぜ変わったかを永続的に記録します。"
-          />
-        </div>
-
-        {/* CONNECTOR */}
-        <div className="h-16 w-0.5 bg-connector relative">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-white border-2 border-connector rounded-full flex items-center justify-center">
-            <div className="w-px h-2 bg-connector rotate-45"></div>
-            <div className="w-px h-2 bg-connector -rotate-45 absolute"></div>
+        {/* Status Bar */}
+        <div className="bg-[#E5E7EB] border-t border-gray-300 px-2 py-1 flex justify-between text-xs text-gray-600 font-mono">
+          <span>Status: Operational</span>
+          <div className="flex gap-4">
+            <span>Ln 1, Col 1</span>
+            <span>UTF-8</span>
+            <span>Ready</span>
           </div>
         </div>
-
-        {/* === FINAL NODE (CTA) === */}
-        <div className="w-full bg-white rounded-lg border border-card-border shadow-lg p-8 text-center relative overflow-hidden group">
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-blue via-purple-500 to-brand-blue"></div>
-
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">
-            その自動化、何年後でも安全に使えますか？
-          </h2>
-          <p className="text-gray-600 mb-8 max-w-lg mx-auto">
-            私たちは、既にあるフローを作り直すことなく、<br />
-            「会社として説明できる業務資産」に戻します。
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/program"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-blue text-white font-semibold rounded-md hover:bg-brand-dark transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
-            >
-              詳細プログラムを見る <ArrowRight size={18} />
-            </Link>
-            <Link
-              href="/insights"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-gray-700 font-medium rounded-md border border-gray-300 hover:bg-gray-50 transition-colors"
-            >
-              まずはInsightsを読む
-            </Link>
-          </div>
-        </div>
-
       </div>
     </div>
   );
