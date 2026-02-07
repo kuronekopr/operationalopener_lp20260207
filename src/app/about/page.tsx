@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ArrowLeft, Users, MessageSquare, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { ArrowLeft, MessageSquare, ArrowRight } from "lucide-react";
 
 export const metadata = {
     title: "About Us | Operational Opener",
@@ -113,8 +114,13 @@ export default function AboutPage() {
 
                     {/* Operator */}
                     <section className="flex flex-col md:flex-row gap-8 items-start border-t border-gray-200 pt-10">
-                        <div className="w-24 h-24 bg-gray-200 rounded-full flex-shrink-0 flex items-center justify-center overflow-hidden">
-                            <Users size={40} className="text-gray-400" />
+                        <div className="w-24 h-24 bg-gray-200 rounded-full flex-shrink-0 flex items-center justify-center overflow-hidden relative">
+                            <Image
+                                src="/minagawa.jpg"
+                                alt="皆川"
+                                fill
+                                className="object-cover object-top"
+                            />
                         </div>
                         <div>
                             <h3 className="text-xl font-bold text-gray-900 mb-1">運営者について</h3>

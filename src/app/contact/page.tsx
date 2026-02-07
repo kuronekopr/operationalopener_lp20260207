@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, Plus, Trash2, Mail, User, Building, Phone, MessageSquare, Send, CheckCircle } from "lucide-react";
 
 export default function ContactPage() {
@@ -79,16 +80,23 @@ export default function ContactPage() {
                     {/* Greeting Section */}
                     <div className="bg-white border-l-4 border-[#1E3A8A] p-6 shadow-sm">
                         <div className="flex items-start gap-4">
-                            <div className="w-16 h-16 bg-gray-200 rounded-full flex-shrink-0 flex items-center justify-center overflow-hidden border-2 border-white shadow-md">
-                                {/* Placeholder for Minagawa-san's avatar */}
-                                <User size={32} className="text-gray-400" />
+                            <div className="w-16 h-16 bg-gray-200 rounded-full flex-shrink-0 flex items-center justify-center overflow-hidden border-2 border-white shadow-md relative">
+                                <Image
+                                    src="/minagawa.jpg"
+                                    alt="皆川代表"
+                                    fill
+                                    className="object-cover object-top"
+                                />
                             </div>
                             <div>
                                 <h2 className="font-bold text-lg text-[#1E3A8A] mb-1">Operational Opener 代表：皆川</h2>
                                 <p className="text-gray-600 text-sm leading-relaxed">
                                     お問い合わせありがとうございます。<br />
                                     「自動化したはずの業務が、逆に属人化している」——そんな課題に直面されていませんか？<br />
-                                    <span className="font-bold text-[#1E3A8A] bg-blue-50 px-1">30分の無料診断オンライン会議</span>にて、貴社の現状をお伺いし、最適な解決策（構造化解析・標準化）をご提案させてください。
+                                    <span className="font-bold text-[#1E3A8A] bg-blue-50 px-1">30分の無料診断オンライン会議</span>にて、貴社の現状をお伺いし、最適な解決策（構造化解析・標準化）をご提案させてください。<br />
+                                    <span className="block mt-2 text-xs text-gray-500 font-mono">
+                                        Email: <a href="mailto:minagawa@operationalopener.com" className="underline hover:text-[#1E3A8A]">minagawa@operationalopener.com</a>
+                                    </span>
                                 </p>
                             </div>
                         </div>
