@@ -33,7 +33,7 @@ export default function ContactPage() {
         setContacts(newContacts);
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
         // Extract plain values from form elements
@@ -61,11 +61,32 @@ ${checkedApps}
 ${comment}
         `.trim();
 
-        // Open mail client
-        window.location.href = `mailto:minagawa@operationalopener.com?subject=${encodeURIComponent("【Web問合せ】無料診断のお申し込み")}&body=${encodeURIComponent(body)}`;
+        // Formsubmit.co endpoint
+        const endpoint = "https://formsubmit.co/ajax/minagawa@operationalopener.com";
 
-        // Show success screen
-        setSubmitted(true);
+        try {
+            const response = await fetch(endpoint, {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    _subject: "【Web問合せ】無料診断のお申し込み",
+                    _replyto: contacts[0]?.email || "",
+                    message: body
+                })
+            });
+
+            if (response.ok) {
+                setSubmitted(true);
+            } else {
+                alert("送信に失敗しました。時間をおいて再度お試しください。");
+            }
+        } catch (error) {
+            console.error("Submission error:", error);
+            alert("送信エラーが発生しました。");
+        }
     };
 
     if (submitted) {
