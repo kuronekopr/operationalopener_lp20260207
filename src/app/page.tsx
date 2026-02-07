@@ -86,12 +86,15 @@ export default function Home() {
 
               {/* Step 2: Overview */}
               <div className="z-10 w-full mb-4">
-                <div className="bg-white p-3 rounded-md shadow-sm border border-gray-300 flex items-center gap-3">
-                  <div className="w-8 h-8 rounded bg-gray-100 flex items-center justify-center text-gray-500">
-                    <Search size={16} />
+                <Link href="/program" className="block group">
+                  <div className="bg-white p-3 rounded-md shadow-sm border border-gray-300 flex items-center gap-3 transition-all group-hover:border-[#1E3A8A] group-hover:shadow-md group-hover:-translate-y-0.5 relative">
+                    <div className="w-8 h-8 rounded bg-gray-100 flex items-center justify-center text-gray-500 group-hover:bg-[#1E3A8A] group-hover:text-white transition-colors">
+                      <Search size={16} />
+                    </div>
+                    <span className="text-sm font-medium text-gray-700 group-hover:text-[#1E3A8A] transition-colors">サービス詳細と導入効果を確認</span>
+                    <ArrowRight size={14} className="ml-auto text-gray-300 group-hover:text-[#1E3A8A] opacity-0 group-hover:opacity-100 transition-all absolute right-2" />
                   </div>
-                  <span className="text-sm font-medium text-gray-700">サービス詳細と導入効果を確認</span>
-                </div>
+                </Link>
                 <div className="h-4"></div>
                 <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-[#8A8886] mx-auto"></div>
               </div>
