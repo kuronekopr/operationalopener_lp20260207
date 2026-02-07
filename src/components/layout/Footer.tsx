@@ -42,6 +42,11 @@ export default function Footer() {
                             <li>
                                 <Link href="/about" className="hover:text-brand-blue">About Us</Link>
                             </li>
+                            <li className="pl-3 text-sm text-gray-500">
+                                <Link href="/about-en" className="hover:text-brand-blue flex items-center gap-1">
+                                    └ English
+                                </Link>
+                            </li>
                         </ul>
                     </div>
 
