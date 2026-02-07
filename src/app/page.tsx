@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Terminal, Minimize, Maximize, X, Shield, FileText, Database } from "lucide-react";
+import { ArrowRight, Terminal, Minimize, Maximize, X, Shield, FileText, Database, Search } from "lucide-react";
 
 export default function Home() {
   return (
@@ -67,34 +67,66 @@ export default function Home() {
           </div>
 
           {/* Right Column: Visual Metaphor */}
+          {/* Right Column: Visual Metaphor (Flow Chart) */}
           <div className="flex-1 mt-8 md:mt-0 relative flex justify-center">
-            {/* Visual representation of "Assetizing" */}
-            <div className="relative w-64 h-64 border-2 border-dashed border-gray-300 rounded-lg p-4 flex flex-col items-center justify-center bg-gray-50">
-              <div className="text-gray-400 absolute top-2 left-2 text-xs font-mono">/repository/assets</div>
+            <div className="relative w-80 border border-gray-300 rounded bg-[#F3F2F1] p-6 shadow-inner flex flex-col items-center">
+              {/* Flow Vertical Line */}
+              <div className="absolute top-8 bottom-8 left-1/2 w-0.5 bg-[#8A8886] -translate-x-1/2 z-0"></div>
 
-              <div className="grid grid-cols-2 gap-4 w-full h-full p-4">
-                <div className="bg-white border border-gray-300 shadow-sm p-2 flex flex-col items-center justify-center gap-1 group">
-                  <FileText className="text-[#1E3A8A] group-hover:scale-110 transition-transform" />
-                  <span className="text-[10px] text-gray-500">Spec.md</span>
+              {/* Step 1: Operational Opener (Trigger) */}
+              <div className="z-10 w-full mb-4">
+                <div className="bg-[#1E3A8A] text-white p-3 rounded-md shadow-sm border border-[#1E3A8A] flex items-center justify-center text-sm font-bold relative">
+                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-4 bg-[#F3F2F1] z-[-1]"></div> {/* Hide line above */}
+                  1. オペレーショナル・オープナー
                 </div>
-                <div className="bg-white border border-gray-300 shadow-sm p-2 flex flex-col items-center justify-center gap-1 group">
-                  <Database className="text-[#1E3A8A] group-hover:scale-110 transition-transform" />
-                  <span className="text-[10px] text-gray-500">Logic.json</span>
+                <div className="h-4"></div> {/* Spacer for arrow */}
+                <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-[#8A8886] mx-auto"></div>
+              </div>
+
+              {/* Step 2: Overview */}
+              <div className="z-10 w-full mb-4">
+                <div className="bg-white p-3 rounded-md shadow-sm border border-gray-300 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded bg-gray-100 flex items-center justify-center text-gray-500">
+                    <Search size={16} />
+                  </div>
+                  <span className="text-sm font-medium text-gray-700">2. 概要把握</span>
                 </div>
-                <div className="bg-white border border-gray-300 shadow-sm p-2 flex flex-col items-center justify-center gap-1 group">
-                  <Terminal className="text-[#1E3A8A] group-hover:scale-110 transition-transform" />
-                  <span className="text-[10px] text-gray-500">Config.yaml</span>
+                <div className="h-4"></div>
+                <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-[#8A8886] mx-auto"></div>
+              </div>
+
+              {/* Step 3: Power Automate Spec */}
+              <div className="z-10 w-full mb-4">
+                <div className="bg-white p-3 rounded-md shadow-sm border border-gray-300 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded bg-[#0078D4] flex items-center justify-center text-white">
+                    <FileText size={16} />
+                  </div>
+                  <span className="text-sm font-medium text-gray-700">3. パワーオートメイト仕様書作成</span>
                 </div>
-                <div className="bg-white border border-gray-300 shadow-sm p-2 flex flex-col items-center justify-center gap-1 group">
-                  <Shield className="text-[#059669] group-hover:scale-110 transition-transform" />
-                  <span className="text-[10px] text-gray-500">Policy</span>
+                <div className="h-4"></div>
+                <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-[#8A8886] mx-auto"></div>
+              </div>
+
+              {/* Step 4: SharePoint List */}
+              <div className="z-10 w-full mb-4">
+                <div className="bg-white p-3 rounded-md shadow-sm border border-gray-300 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded bg-[#037A7A] flex items-center justify-center text-white">
+                    <Database size={16} />
+                  </div>
+                  <span className="text-sm font-medium text-gray-700">4. SPリスト作成自動化</span>
+                </div>
+                <div className="h-4"></div>
+                <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-[#8A8886] mx-auto"></div>
+              </div>
+
+              {/* Step 5: Assetization (Success) */}
+              <div className="z-10 w-full">
+                <div className="bg-[#DEF7E5] p-3 rounded-md shadow-sm border border-[#107C10] flex items-center justify-center gap-2">
+                  <Shield size={16} className="text-[#107C10]" />
+                  <span className="text-sm font-bold text-[#107C10]">5. 業務資産化 (Completed)</span>
                 </div>
               </div>
 
-              {/* Overlay Label */}
-              <div className="absolute -bottom-4 bg-[#1E3A8A] text-white text-xs px-3 py-1 rounded shadow-md font-bold tracking-wider">
-                ASSETIZED
-              </div>
             </div>
           </div>
         </div>
