@@ -14,11 +14,10 @@ export function middleware(req: NextRequest) {
         const authValue = basicAuth.split(' ')[1];
         const [user, pwd] = atob(authValue).split(':');
 
-        // 環境変数でID/PASSを設定（設定がない場合はデフォルト値を使用）
-        const validUser = process.env.BASIC_AUTH_USER || 'admin';
-        const validPass = process.env.BASIC_AUTH_PASSWORD || 'password';
+        const validUser = process.env.BASIC_AUTH_USER;
+        const validPass = process.env.BASIC_AUTH_PASSWORD;
 
-        if (user === validUser && pwd === validPass) {
+        if (validUser && validPass && user === validUser && pwd === validPass) {
             return NextResponse.next();
         }
     }
